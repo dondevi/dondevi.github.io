@@ -7,7 +7,7 @@
  *   Use DOM 3：querySelectorAll, dataset
  *   Use ECMAScript 5：forEach
  *
- * @author 董经伟
+ * @author dondevi
  * @create 2014-06-25
  */
 

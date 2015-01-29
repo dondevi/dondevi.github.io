@@ -3,7 +3,7 @@
  *
  * 包括代码风格、编程实践、工作流
  *
- * @author 董经伟
+ * @author dondevi
  * @create 2014-06-25
  */
 
