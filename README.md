@@ -1,3 +1,3 @@
-# dondevi.github.io
+# This is for my personal page.
 
-This is for personal page.
+dondevi.github.io
