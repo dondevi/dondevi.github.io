@@ -208,11 +208,14 @@ pre code {
   padding: 0.6rem 1.6rem;
   color: #ccc;
 }
-.menu-item a.active,
+.menu-item > a.active,
 .menu-item a:hover {
-  background: #404040;
+  background: #555;
   color: #fff;
   text-decoration: none;
+}
+.menu-item ul a.active {
+  background-color: #eee;
 }
 .menu-sub {
   position: absolute;

@@ -24,8 +24,8 @@
   <link rel="shortcut icon" href="./asset/img/favicon_01.png" type="image/x-icon">
   <title>Web前端代码风格指南</title>
   <link rel="stylesheet" href="./asset/css/main.css">
-  <script src="./asset/js/scrollSpy.js"></script>
-  <script src="./asset/js/main.js"></script>
+  <script defer src="./asset/js/scrollSpy.js"></script>
+  <script defer src="./asset/js/main.js"></script>
 </head>
 
 <body class="page-codestyle">
@@ -36,7 +36,7 @@
     <a class="logo" href="#" title="Web前端代码风格指南">✍</a>
     <ul class="menu">
       <li class="menu-item">
-        <a href="#global" data-target="global">Global</a>
+        <a href="#global">Global</a>
         <ul class="menu-sub">
           <li><a href="#global-indent">使用2个空格缩进</a></li>
           <li><a href="#global-quotes">使用双引号</a></li>
@@ -46,7 +46,7 @@
         </ul>
       </li>
       <li class="menu-item">
-        <a href="#html" data-target="html">HTML</a>
+        <a href="#html">HTML</a>
         <ul class="menu-sub">
           <li><a href="#html-doctype">文档类型</a></li>
           <li><a href="#html-lang">语言属性</a></li>
@@ -63,7 +63,7 @@
         </ul>
       </li>
       <li class="menu-item">
-        <a href="#css" data-target="css">CSS</a>
+        <a href="#css">CSS</a>
         <ul class="menu-sub">
           <li><a href="#css-declar-rule">声明规则</a></li>
           <li><a href="#css-declar-single">单行声明</a></li>
@@ -81,7 +81,7 @@
         </ul>
       </li>
       <li class="menu-item">
-        <a href="#js" data-target="js">Javascript</a>
+        <a href="#js">Javascript</a>
         <ul class="menu-sub">
           <li><a href="#js-rule">基本规则</a></li>
           <li><a href="#js-suggest">其他建议</a></li>
@@ -1054,7 +1054,7 @@
   <div class="heading" id="js">
     <h2>Javascript <sup><a href="#ref[3]"><small>[3]</small></a></sup></h2>
   </div>
-  <div class="heading-sub" id="js-naming">
+  <div class="heading-sub">
     <h3><em>- 基本 -</em></h3>
   </div>
   <div class="section" id="js-rule">

@@ -9,5 +9,5 @@
 
 window.onload = function () {
   // 滚动监听
-  scrollSpy();
+  scrollSpy(".menu-item > a");
 };

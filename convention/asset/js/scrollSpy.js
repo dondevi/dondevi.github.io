@@ -11,16 +11,16 @@
  * @create 2014-06-25
  */
 
-var scrollSpy = function () {
+var scrollSpy = function (selector, offset) {
 
   /**
    * ------------------------------
    * Config
    * ------------------------------
    */
-  var SELECTOR  = ".menu-item > a"; // Select "<a>" elements to spy
+  var SELECTOR  = selector || "a";  // Select "<a>" elements to spy
   var CLASSNAME = "active";         // Class name for active state
-  var OFFSET    = 130;              // Offset form top side of viewport
+  var OFFSET    = offset || 130;    // Offset form top side of viewport
 
 
   /**
@@ -48,9 +48,9 @@ var scrollSpy = function () {
     var curTop = document.body.scrollTop;
 
     items.forEach(function (item, i) {
-      target = document.getElementById(item.dataset["target"]);
+      target = document.getElementById(item.hash.slice(1));
       if (target) {
-        result.push(target.getBoundingClientRect().top + curTop);
+        result.push(target.offsetTop + curTop);
       } else {
         items.splice(i--, 1); // Delete null
       }
@@ -82,11 +82,12 @@ var scrollSpy = function () {
    */
   var checkActive = function() {
 
-    curTop = document.body.scrollTop + OFFSET;
+    curTop = (document.body.scrollTop || document.documentElement.scrollTop) + OFFSET;
 
     tops.forEach(function (top, i) {
       if (tops[i] < curTop && tops[i+1] > curTop) {
         items[i].classList.add(CLASSNAME);
+        items[i].scrollIntoViewIfNeeded();
       } else if (items[i]) {
         items[i].classList.remove(CLASSNAME);
       }
@@ -101,7 +102,11 @@ var scrollSpy = function () {
    */
 
   // Listen event
-  window.onscroll = checkActive;
+  var timer = -1;
+  window.onscroll = function (event) {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(checkActive, 300);
+  }
 
   // The first time
   checkActive();
