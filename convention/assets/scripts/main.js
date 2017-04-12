@@ -15,6 +15,8 @@
  */
 
 window.onload = function () {
-  // 滚动监听
+
+  // 滚动监听导航
   window.scrollSpy(".menu-item > a");
+
 };
