@@ -1,30 +1,33 @@
 /**
- * 前端规范系列
+ * =============================================================================
+ *  前端规范系列
+ * =============================================================================
+ *  包括代码风格、编程实践、工作流
+ * =============================================================================
  *
- * 包括代码风格、编程实践、工作流
+ * @update 2014-06-24 dondevi
+ * @update 2017-04-12 dondevi
+ *   1.comments
  *
- * @mender dondevi
- * @update 2014-06-24
  */
 
 
 /*
- * Scaffolding and type
+ * =============================================================================
+ *  Base
+ * =============================================================================
  */
-html {
-  font-size: 11px;
-}
+html { font-size: 11px; }
 @media (min-width: 48em) {
-  html {
-    font-size: 15px;
-  }
+  html { font-size: 15px; }
 }
 
 body {
   overflow-x: hidden;
   margin: 0;
   font: 1rem/1.5 "PT Sans", sans-serif;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB",
+               "Hiragino Sans GB W3", "Microsoft YaHei", sans-serif;
   color: #5a5a5a;
 }
 
@@ -48,15 +51,9 @@ h2 { font-size: 2.5rem; }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.75rem; }
 h5 { font-size: 1.25rem; }
-
 p {
   margin: 0 0 1rem;
 }
-.lead {
-  font-size: 1.3rem;
-}
-
-
 blockquote {
   position: relative;
   margin: 0 1rem 1rem;
@@ -66,11 +63,9 @@ blockquote {
 blockquote p {
   margin-bottom: 0;
 }
-
 ul li {
   margin-bottom: .25rem;
 }
-
 /* Tighten up margin on last items */
 p:last-child,
 ul:last-child,
@@ -81,7 +76,9 @@ blockquote:last-child{
 
 
 /*
- * Code
+ * =============================================================================
+ *  Code
+ * =============================================================================
  */
 code,
 pre {
@@ -95,7 +92,6 @@ code {
   background-color: #f7f7f9;
   border-radius: .2rem;
 }
-
 pre {
   display: block;
   margin: 0 0 1rem;
@@ -122,7 +118,9 @@ pre code {
 
 
 /*
- * The Grid
+ * =============================================================================
+ *  Grid
+ * =============================================================================
  */
 .col {
   position: relative;
@@ -183,12 +181,12 @@ pre code {
   background: #303030;
   font-size: 2.4rem;
   color: rgba(255,255,255,.5);
-  line-height: 1;
+  line-height: 1.2;
 }
 .page-codestyle .logo { color: rgb(105,225,243); }
 .page-practice .logo  { color: rgb(248,100,136); }
 .page-workflow .logo  { color: rgb(137,127,221); }
-.page-train .logo     { color: rgb(103,245,160); }
+.page-getstart .logo     { color: rgb(103,245,160); }
 @media (min-width: 38em) {
   .logo {
     height: 100%;
@@ -215,7 +213,7 @@ pre code {
   text-decoration: none;
 }
 .menu-item ul a.active {
-  background-color: #eee;
+  background-color: #efefef;
 }
 .menu-sub {
   position: absolute;
@@ -239,7 +237,7 @@ pre code {
   .title-codestyle a { color: rgb(40,160,178); }
   .title-practice a  { color: rgb(183,35,71); }
   .title-workflow a  { color: rgb(72,62,156); }
-  .title-train a     { color: rgb(38,180,95); }
+  .title-getstart a     { color: rgb(38,180,95); }
 .menu-sub a:hover {
   background: #f8f8f8;
   color: #000;
@@ -247,7 +245,7 @@ pre code {
   .title-codestyle a:hover { color: rgb(40,160,178); }
   .title-practice a:hover  { color: rgb(183,35,71); }
   .title-workflow a:hover  { color: rgb(72,62,156); }
-  .title-train a:hover     { color: rgb(38,180,95); }
+  .title-getstart a:hover     { color: rgb(38,180,95); }
 .menu-sub hr {
   border: none;
   border-top: 1px solid #ccc;
@@ -263,7 +261,9 @@ pre code {
 
 
 /*
- * Masthead
+ * =============================================================================
+ *  Masthead
+ * =============================================================================
  */
 .masthead {
   position: relative;
@@ -274,10 +274,10 @@ pre code {
   background-color: #2a3440;
   box-shadow: 0 2px 5px #aaa;
 }
-.page-codestyle .masthead { background: url(../img/bg_01.jpg) rgb(40,160,178); }
-.page-practice .masthead  { background: url(../img/bg_02.jpg) rgb(183,35,71); }
-.page-workflow .masthead  { background: url(../img/bg_03.jpg) rgb(72,62,156); }
-.page-train .masthead     { background: url(../img/bg_04.jpg) rgb(38,180,95); }
+.page-codestyle .masthead { background: url(../images/bg_01.jpg) rgb(40,160,178); }
+.page-practice .masthead  { background: url(../images/bg_02.jpg) rgb(183,35,71); }
+.page-workflow .masthead  { background: url(../images/bg_03.jpg) rgb(72,62,156); }
+.page-getstart .masthead     { background: url(../images/bg_04.jpg) rgb(38,180,95); }
 @media (min-width: 38em) {
   .masthead {
     margin-top: 2.6rem;
@@ -297,10 +297,14 @@ pre code {
     font-size: 3.5rem;
   }
 }
-
+.lead {
+  font-size: 1.3rem;
+}
 
 /*
- * Sections
+ * =============================================================================
+ *  Sections
+ * =============================================================================
  */
 .heading {
   padding: 2rem 2rem 1.5rem;
@@ -311,7 +315,7 @@ pre code {
 .page-codestyle .heading { border-color: rgb(40,160,178); }
 .page-practice .heading  { border-color: rgb(183,35,71); }
 .page-workflow .heading  { border-color: rgb(72,62,156); }
-.page-train .heading     { border-color: rgb(38,180,95); }
+.page-getstart .heading     { border-color: rgb(38,180,95); }
 @media (min-width: 38em) {
   .heading {
     padding: 3rem 3.5rem 2.5rem;
@@ -338,7 +342,9 @@ pre code {
 
 
 /*
- * Footer
+ * =============================================================================
+ *  Footer
+ * =============================================================================
  */
 .footer {
   padding: 3rem 1rem;
@@ -382,14 +388,16 @@ pre code {
 .page-codestyle .ref-trans { color: rgb(105,225,243); }
 .page-practice .ref-trans  { color: rgb(248,100,136); }
 .page-workflow .ref-trans  { color: rgb(137,127,221); }
-.page-train .ref-trans     { color: rgb(103,245,160); }
+.page-getstart .ref-trans     { color: rgb(103,245,160); }
 .ref-author {
   color: #aaa;
 }
 
 
 /*
- * Syntax highlighting
+ * =============================================================================
+ *  Syntax Highlighting
+ * =============================================================================
  */
 .hll { background-color: #ffc }
  /*{ background: #f0f3f3; }*/
@@ -397,7 +405,7 @@ pre code {
 .err { color: #a00; background-color: #faa } /* Error */
 .k  { color: #069; } /* Keyword */
 .o  { color: #555 } /* Operator */
-.cm { color: #999; } /* Comment.Multiline */ /* Edited to remove italics and make into comment */
+.cm { color: #999; } /* Comment.Multiline */
 .cp { color: #099 } /* Comment.Preproc */
 .c1 { color: #999; } /* Comment.Single */
 .cs { color: #999; } /* Comment.Special */
@@ -460,9 +468,13 @@ pre code {
 
 
 /**
- * 追加自定义样式
+ * =============================================================================
+ *  Custom
+ * =============================================================================
+ *
+ * @update 2014-06-24 dondevi
+ *
  */
-
 .hide {
   display: none;
 }
@@ -486,8 +498,7 @@ pre code {
   vertical-align: middle;
 }
 
-
-/* 示例图 */
+/* Diagram */
 .decoupling-diagram {
   display: inline-block;
   background: #eee;
