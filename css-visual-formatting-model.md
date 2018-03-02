@@ -10,75 +10,9 @@
 > MDN: <https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting_model>
 
 
-<br>
-
-### Block-level Element <small style="font-weight: normal;"><sup>[[MDN](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)]</sup></small>
-- Condition: `display` { `block` | `list-item` | `table` }
-- Genarate: Block-level Box <small>(Principal + Additional)</small>
-
-### Inline-level Element <small style="font-weight: normal;"><sup>[[MDN](https://developer.mozilla.org/docs/Web/HTML/Inline_elements)]</sup></small>
-- Condition: `display` { `inline` | `inline-block` | `inline-table` }
-- Genarate: Inline-level Box
-
-<br><hr><br>
-
-### Block-level Box <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#block-boxes)]</sup></small>
-> Participating in Block Formatting Context
-
-##### 1. Block Box
-> Block-level Box ∩ Block Container Box
-
-- Exculde: Table Box, Replaced Element
-
-##### 2. Anonymous Block Box
-
-##### 3. Block Container Box
-> Contains only Block-level Box or only Inline-level Box
-
-- Inculde: Non-replaced Inline Block, Non-replaced Table Cell
-
-<br>
-
-### Inline-level Box <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#inline-boxes)]</sup></small>
-
-##### 1. Inline Box
-> Contents participate in container's Inline Formatting Context
-
-- Condition: `display` { `inline` } & Non-replaced Element
-
-##### 2. Anonymous Inline Box
-
-##### 3. Atomic Inline-level Box
-> Contents not participate in container's Inline Formatting Context
-
-- Inculde: Replaced Inline-level Element, Inline-block Element, Inline-table Element
-
-
-<br><hr><br>
-
-### Block Formatting Context <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#block-formatting), [MDN](https://developer.mozilla.org/docs/Web/Guide/CSS/Block_formatting_context)]</sup></small>
-> Floats, absolutely positioned elements, block containers (such as inline-blocks, table-cells, and table-captions) that are not block boxes, and block boxes with 'overflow' other than 'visible' (except when that value has been propagated to the viewport) establish new block formatting contexts for their contents.
-
-- Condition:
-    - Block containers that are not block boxes
-        - `display` { `inline-*`| `table-?*`} - { `table-column`| `table-column-group` }
-    - Block Element & `overflow` { `auto` | `hidden` | `scroll` }
-    - Root element: `<html>`
-    - `position` { `absolute` | `fixed` }
-    - `float` { `left` | `right` }
-- Contain: Block-level Box,
-<!-- - Feature: Vertical, Margin collapse -->
-
-### Inline Formatting Context <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#inline-formatting)]</sup></small>
-- Contain: Inline-level Box
-
-
-<br><hr><br>
-
-
 ### Diagram
 
-<section class="case" style="position: relative; overflow: auto; margin-bottom: 30px; padding: 20px 25px; white-space: nowrap;">
+<section class="case" style="overflow: auto; padding: 20px 25px; white-space: nowrap;">
   <div style="display: inline-block; margin-right: 100px;">
     <div style="width: 260px; height: 150px; border: 1px solid; border-radius: 50%; text-align: center; line-height: 90px;">
       <strong>Block-level Box</strong>
@@ -104,7 +38,13 @@
     <p style="margin-top: 10px;">
       <span style="display: inline-block; width: 180px; margin-left: -150px; border-top: 1px solid #ccc; line-height: 0; vertical-align: middle;"></span>
       Replaced Block-level Element, Table Element</p>
-    <p style="margin-top: 145px; position: relative;">
+    <p style="margin-top: 58px;">
+      <span style="display: inline-block; width: 150px; margin-left: -150px; border-top: 1px dashed #ccc; line-height: 0; vertical-align: middle;"></span>
+      Establish: <strong>Block Formatting Context</strong> (BFC)</p>
+    <p style="margin-top: 10px;">
+      <span style="display: inline-block; width: 150px; margin-left: -150px; border-top: 1px dashed #ccc; line-height: 0; vertical-align: middle;"></span>
+      Establish: <strong>Inline Formatting Context</strong> (IFC)</p>
+    <p style="margin-top: 30px; position: relative;">
       <span style="display: inline-block; width: 180px; margin-left: -150px; border-top: 1px solid #ccc; line-height: 0; vertical-align: middle;"></span>
       Non-replaced Inline Block, Non-replaced Table Cells</p>
     <p style="margin-top: -2px;">
@@ -121,14 +61,13 @@
   </div>
 </section>
 
+<br>
+
 <div>
-  <fieldset is="model-box" type="block-container">
-    <fieldset is="formatting-context" type="block">
+  <fieldset is="formatting-context" type="block">
+    <fieldset is="model-box" type="block-container" style="background: rgba(255,255,255,0.5);">
       <fieldset is="model-box" type="block"></fieldset>
       <fieldset is="model-box" type="block-level"></fieldset>
-      <fieldset is="anonymous-box" type="block">
-        <fieldset is="model-box" type="inline-level"></fieldset>
-      </fieldset>
     </fieldset>
   </fieldset>
 </div>
@@ -136,10 +75,15 @@
 <div style="text-align: center;">or</div>
 
 <div>
-  <fieldset is="formatting-context" type="block">
-    <fieldset is="model-box" type="block-container" style="background: rgba(255,255,255,0.5);">
+  <fieldset is="model-box" type="block-container">
+    <fieldset is="formatting-context" type="block">
+      <fieldset is="model-box" type="block"></fieldset>
       <fieldset is="model-box" type="block-level"></fieldset>
-      <fieldset is="model-box" type="block-level"></fieldset>
+      <fieldset is="anonymous-box" type="block">
+        <fieldset is="formatting-context" type="inline">
+          <fieldset is="model-box" type="inline-level"></fieldset>
+        </fieldset>
+      </fieldset>
     </fieldset>
   </fieldset>
 </div>
@@ -162,9 +106,7 @@
 </div>
 
 
-
-<br><br><hr><br>
-
+<br><hr><br>
 
 
 ### Case 1: Block-level Element in Inline-level Element
@@ -191,9 +133,11 @@
 <div>
   <fieldset is="model-box" type="inline" style="display: block; opacity: 0.5;">
     <fieldset is="formatting-context" type="inline">
-      <fieldset is="model-box" type="inline"></fieldset>
-      <fieldset is="model-box" type="block-level"></fieldset>
-      <fieldset is="anonymous-box" type="inline"></fieldset>
+      <fieldset is="model-box" type="line">
+        <fieldset is="model-box" type="inline"></fieldset>
+        <fieldset is="model-box" type="block-level"></fieldset>
+        <fieldset is="anonymous-box" type="inline"></fieldset>
+      </fieldset>
     </fieldset>
   </fieldset>
 </div>
@@ -205,7 +149,9 @@
     <fieldset is="anonymous-box" type="block">
       <fieldset is="model-box" type="inline" style="border-right: 0;">
         <fieldset is="formatting-context" type="inline">
-          <fieldset is="model-box" type="inline"></fieldset>
+          <fieldset is="model-box" type="line">
+            <fieldset is="model-box" type="inline"></fieldset>
+          </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
@@ -213,7 +159,9 @@
     <fieldset is="anonymous-box" type="block">
       <fieldset is="model-box" type="inline" style="border-left: 0;">
         <fieldset is="formatting-context" type="inline">
-          <fieldset is="anonymous-box" type="inline"></fieldset>
+          <fieldset is="model-box" type="line">
+            <fieldset is="anonymous-box" type="inline"></fieldset>
+          </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
@@ -222,7 +170,7 @@
 
 
 
-<br><br><br><br>
+<br><br>
 
 
 
@@ -305,7 +253,7 @@
 
 
 
-<br><br><br><br>
+<br><br>
 
 
 
@@ -382,3 +330,99 @@
     </fieldset>
   </fieldset>
 </div>
+
+
+<br><br><hr><br>
+
+
+### Block-level Element <small style="font-weight: normal;"><sup>[[MDN](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)]</sup></small>
+- Condition: `display` { `block` | `list-item` | `table` }
+- Genarate: Block-level Box <small>(Principal + Additional)</small>
+
+### Inline-level Element <small style="font-weight: normal;"><sup>[[MDN](https://developer.mozilla.org/docs/Web/HTML/Inline_elements)]</sup></small>
+- Condition: `display` { `inline` | `inline-block` | `inline-table` }
+- Genarate: Inline-level Box
+
+<br><hr><br>
+
+### Block-level Box <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#block-boxes)]</sup></small>
+> Participating in Block Formatting Context
+
+##### 1. Block Box
+> Block-level Box ∩ Block Container Box
+
+- Exculde: Table Box, Replaced Element
+
+##### 2. Anonymous Block Box
+
+##### 3. Block Container Box
+> Contains only Block-level Box or only Inline-level Box
+
+- Inculde: Non-replaced Inline Block, Non-replaced Table Cell
+
+<br>
+
+### Inline-level Box <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#inline-boxes)]</sup></small>
+
+##### 1. Inline Box
+> Contents participate in container's Inline Formatting Context
+
+- Condition: `display` { `inline` } & Non-replaced Element
+
+##### 2. Anonymous Inline Box
+
+##### 3. Atomic Inline-level Box
+> Contents not participate in container's Inline Formatting Context
+
+- Inculde: Replaced Inline-level Element, Inline-block Element, Inline-table Element
+
+
+<br><hr><br>
+
+### Block Formatting Context <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#block-formatting), [MDN](https://developer.mozilla.org/docs/Web/Guide/CSS/Block_formatting_context)]</sup></small>
+
+- Contain: Block-level Box
+
+#### Rules
+
+- Begin at the top of [Containing Block](https://www.w3.org/TR/CSS2/visuren.html#containing-block), boxes are **laid out** one after the other **vertically**.
+- The **vertical distance** between two sibling boxes is determined by **'margin'**.
+- Vertical [**Margins Collapsed**](https://www.w3.org/TR/CSS2/box.html#collapsing-margins) between adjacent boxes.
+- Each box's left **outer edge** touches the left edge of containing block (vice versa for right-to-left). <br> This is true even in the presence of **floats**, unless the box establishes a new <abbr title="Block Formatting Context">BFC</abbr>.
+
+#### Conditions
+> Establish a new <abbr title="Block Formatting Context">BFC</abbr> for contents
+
+- Floats
+    - `float` { `left` | `right` }
+- Absolutely positioned element
+    - `position` { `absolute` | `fixed` }
+- Block Container Box that are not Block Box
+    - `display` { `inline-*`| `table-*`} - { `table-column`| `table-column-group` }
+- <u>Block Box</u>  with 'overflow' other than 'visible'
+    - `overflow` { `auto` | `hidden` | `scroll` }
+- Root element or it's container `<html>`
+
+<br>
+
+### Inline Formatting Context <small style="font-weight: normal;"><sup>[[W3C](https://www.w3.org/TR/CSS2/visuren.html#inline-formatting)]</sup></small>
+
+- Contain: Inline-level Box
+
+#### Rules
+
+- Begin at the top of [Containing Block](https://www.w3.org/TR/CSS2/visuren.html#containing-block), boxes are **laid out** one after the other **horizontally**.
+- The boxes may be **aligned** vertically in different ways: <br> their bottoms or tops may be aligned, or the baselines of text within them may be aligned.
+
+#### Line Box
+> The rectangular area that contains the boxes that form a line
+
+- Line box's height ≥ tallest box's height.
+- When box's height <small>＜</small> line box's height, it's **vertical alignment** is determined by the **'vertical-align'**.
+- When boxes's total width <small>＜</small> line box's width, their **horizontal distribution** is determined by the **'text-align'**
+- When boxes cannot fit within a line box, they are distributed among two or more **vertically-stacked** line boxes.
+- Line boxes are stacked with **no vertical separation** (except as specified elsewhere) and they **never overlap**.
+- When an **Inline Box exceeds** a line box, it is **split** into several boxes across several line boxes. <br> It's margins, borders, and padding have **no visual effect** where the split occurs. <br> If it cannot be split (e.g. `white-space:nowrap`), then it **overflows** the line box.
+- In general, line box's left **edge** touches the left edge of containing block (vice versa for right-to-left). <br> However, **floating boxes** may come between the containing block edge and the line box edge.
+
+<div></div>
