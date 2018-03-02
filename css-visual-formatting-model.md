@@ -1,9 +1,35 @@
 ---
-  references:
-    - css-visuren-head.md
   author: dondevi
   create: 2018-02-27
+  update: 2018-03-02
 ---
+
+<style>
+  .markdown-body { position: relative; }
+  label { cursor: pointer; }
+  .case { background-color: #f7f7f7; padding: 20px 15px; overflow: hidden; }
+  fieldset.bfc, fieldset.ifc { border: none; }
+  .bfc { background-color: highlight; }
+  .ifc { background-color: infobackground; }
+    .bfc > legend, .ifc > legend { color: gray; font-size: smaller; }
+  .i-l-box, .i-box, .a-i-box, .at-i-l-box { display: inline; }
+    .i-l-box { background-color: rgba(255,255,255,0.6); }
+    .i-box, .a-i-box { background-color: transparent; }
+  .b-l-box, .b-box, .a-b-box, .b-c-box,.at-i-l-box, .f-box { background-color: white; }
+    .bfc > .b-c-box { background-color: rgba(255,255,255,0.5); }
+  .b-l-box, .b-box, .b-c-box, .i-box, .at-i-l-box, .f-box { border-style: solid; }
+    .a-b-box, .a-i-box { border-style: dashed; }
+  .l-box { background-color: transparent; border-style: dotted; }
+    .l-box > legend { color: gray; }
+  .f-box { float: left; margin-top: -2px; margin-right: 10px; box-shadow: 5px 6px 5px #888; }
+  .tc { text-align: center; }
+</style>
+
+<div style="position: absolute; top: 50px; right: 50px; font-size: small;">
+  <span style="text-decoration: underline;">English</span>&nbsp;
+  <a href="./css-visual-formatting-model-zh.html">中文</a>
+</div>
+
 
 # CSS Visual Formatting Model
 > W3C: <https://www.w3.org/TR/CSS2/visuren.html>
@@ -64,42 +90,43 @@
 <br>
 
 <div>
-  <fieldset is="formatting-context" type="block">
-    <fieldset is="model-box" type="block-container" style="background: rgba(255,255,255,0.5);">
-      <fieldset is="model-box" type="block"></fieldset>
-      <fieldset is="model-box" type="block-level"></fieldset>
+  <fieldset class="bfc"> <legend>BFC</legend>
+    <fieldset class="b-c-box"> <legend>Block Container Box</legend>
+      <fieldset class="b-box"> <legend>Block Box</legend> </fieldset>
+      <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
     </fieldset>
   </fieldset>
 </div>
 
-<div style="text-align: center;">or</div>
+<div class="tc">or</div>
 
 <div>
-  <fieldset is="model-box" type="block-container">
-    <fieldset is="formatting-context" type="block">
-      <fieldset is="model-box" type="block"></fieldset>
-      <fieldset is="model-box" type="block-level"></fieldset>
-      <fieldset is="anonymous-box" type="block">
-        <fieldset is="formatting-context" type="inline">
-          <fieldset is="model-box" type="inline-level"></fieldset>
+  <fieldset class="b-c-box"> <legend>Block Container Box</legend>
+    <fieldset class="bfc"> <legend>BFC</legend>
+      <fieldset class="b-box"> <legend>Block Box</legend> </fieldset>
+      <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
+      <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+        <fieldset class="ifc"> <legend>IFC</legend>
+          <fieldset class="i-l-box"> <legend>Inline-level Box</legend> </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
   </fieldset>
 </div>
 
-<div style="text-align: center;">or</div>
+<div class="tc">or</div>
 
 <div>
-  <fieldset is="model-box" type="block-container">
-    <fieldset is="formatting-context" type="inline">
-      <fieldset is="model-box" type="float" style="margin-left: -20px;">
-        <fieldset is="formatting-context" type="block"></fieldset>
+  <fieldset class="b-c-box"> <legend>Block Container Box</legend>
+    <fieldset class="ifc"> <legend>IFC</legend>
+      <fieldset class="f-box" style="margin-left: -20px;">
+        <legend>Float Box</legend>
+        <fieldset class="bfc"> <legend>BFC</legend> </fieldset>
       </fieldset>
-      <fieldset is="model-box" type="line">
-        <fieldset is="model-box" type="inline"></fieldset>
-        <fieldset is="model-box" type="atomic-inline-level"></fieldset>
-        <fieldset is="anonymous-box" type="inline"></fieldset>
+      <fieldset class="l-box"> <legend>Line Box</legend>
+        <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
+        <fieldset class="at-i-l-box"> <legend>Atomic Inline-level Box</legend> </fieldset>
+        <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
       </fieldset>
     </fieldset>
   </fieldset>
@@ -128,39 +155,42 @@
   </span>
 </section>
 
-<div style="text-align: center;">as</div>
+<div class="tc">as</div>
 
 <div>
-  <fieldset is="model-box" type="inline" style="display: block; opacity: 0.5;">
-    <fieldset is="formatting-context" type="inline">
-      <fieldset is="model-box" type="line">
-        <fieldset is="model-box" type="inline"></fieldset>
-        <fieldset is="model-box" type="block-level"></fieldset>
-        <fieldset is="anonymous-box" type="inline"></fieldset>
+  <fieldset class="i-box" style="display: block; opacity: 0.5;">
+      <legend>Inline Box</legend>
+    <fieldset class="ifc"> <legend>IFC</legend>
+      <fieldset class="l-box"> <legend>Line Box</legend>
+        <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
+        <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
+        <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
       </fieldset>
     </fieldset>
   </fieldset>
 </div>
 
-<div style="text-align: center;">↓↓↓</div>
+<div class="tc">↓↓↓</div>
 
 <div>
-  <fieldset is="formatting-context" type="block">
-    <fieldset is="anonymous-box" type="block">
-      <fieldset is="model-box" type="inline" style="border-right: 0;">
-        <fieldset is="formatting-context" type="inline">
-          <fieldset is="model-box" type="line">
-            <fieldset is="model-box" type="inline"></fieldset>
+  <fieldset class="bfc"> <legend>BFC</legend>
+    <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+      <fieldset class="i-box" style="border-right: 0;">
+        <legend>Inline Box</legend>
+        <fieldset class="ifc"> <legend>IFC</legend>
+          <fieldset class="l-box"> <legend>Line Box</legend>
+            <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
-    <fieldset is="model-box" type="block-level"></fieldset>
-    <fieldset is="anonymous-box" type="block">
-      <fieldset is="model-box" type="inline" style="border-left: 0;">
-        <fieldset is="formatting-context" type="inline">
-          <fieldset is="model-box" type="line">
-            <fieldset is="anonymous-box" type="inline"></fieldset>
+    <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
+    <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+      <fieldset class="i-box" style="border-left: 0;">
+        <legend>Inline Box</legend>
+        <fieldset class="ifc"> <legend>IFC</legend>
+          <fieldset class="l-box"> <legend>Line Box</legend>
+            <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
@@ -203,45 +233,48 @@
   </div>
 </section>
 
-<div style="text-align: center;">as</div>
+<div class="tc">as</div>
 
 <div>
-  <fieldset is="model-box" type="block" style="opacity: 0.5;">
-    <fieldset is="formatting-context" type="block">
-      <fieldset is="anonymous-box" type="block" style="float: left;">
-        <fieldset is="formatting-context" type="inline">
-          <fieldset is="model-box" type="inline""></fieldset>
+  <fieldset class="b-box" style="opacity: 0.5;">
+      <legend>Block Box</legend>
+    <fieldset class="bfc"> <legend>BFC</legend>
+      <fieldset class="a-b-box" style="float: left;">
+        <legend>Anonymous Block Box</legend>
+        <fieldset class="ifc"> <legend>IFC</legend>
+          <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset is="model-box" type="block">
-        <fieldset is="formatting-context" type="inline">
-          <fieldset is="anonymous-box" type="inline"></fieldset>
+      <fieldset class="b-box"> <legend>Block Box</legend>
+        <fieldset class="ifc"> <legend>IFC</legend>
+          <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
   </fieldset>
 </div>
 
-<div style="text-align: center;">↓↓↓</div>
+<div class="tc">↓↓↓</div>
 
 <div>
-  <fieldset is="model-box" type="block">
-    <fieldset is="formatting-context" type="inline">
-      <fieldset is="model-box" type="float" style="margin-left: -20px;">
-        <fieldset is="formatting-context" type="block">
-          <fieldset is="anonymous-box" type="block">
-            <fieldset is="formatting-context" type="inline">
-              <fieldset is="anonymous-box" type="inline"></fieldset>
+  <fieldset class="b-box"> <legend>Block Box</legend>
+    <fieldset class="ifc"> <legend>IFC</legend>
+      <fieldset class="f-box" style="margin-left: -20px;">
+        <legend>Float Box</legend>
+        <fieldset class="bfc"> <legend>BFC</legend>
+          <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+            <fieldset class="ifc"> <legend>IFC</legend>
+              <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
             </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset is="model-box" type="line">
-        <fieldset is="model-box" type="atomic-inline-level">
-          <fieldset is="formatting-context" type="block">
-            <fieldset is="anonymous-box" type="block">
-              <fieldset is="formatting-context" type="inline">
-                <fieldset is="anonymous-box" type="inline"></fieldset>
+      <fieldset class="l-box"> <legend>Line Box</legend>
+        <fieldset class="at-i-l-box"> <legend>Atomic Inline-level Box</legend>
+          <fieldset class="bfc"> <legend>BFC</legend>
+            <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+              <fieldset class="ifc"> <legend>IFC</legend>
+                <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
               </fieldset>
             </fieldset>
           </fieldset>
@@ -285,44 +318,47 @@
   </div>
 </section>
 
-<div style="text-align: center;">as</div>
+<div class="tc">as</div>
 
 <div>
-  <fieldset is="model-box" type="block" style="opacity: 0.5;">
-    <fieldset is="formatting-context" type="block">
-      <fieldset is="anonymous-box" type="block" style="float: left;">
-        <fieldset is="formatting-context" type="inline">
-          <fieldset is="model-box" type="inline""></fieldset>
+  <fieldset class="b-box" style="opacity: 0.5;">
+      <legend>Block Box</legend>
+    <fieldset class="bfc"> <legend>BFC</legend>
+      <fieldset class="a-b-box" style="float: left;">
+        <legend>Anonymous Block Box</legend>
+        <fieldset class="ifc"> <legend>IFC</legend>
+          <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset is="model-box" type="block">
-        <fieldset is="formatting-context" type="inline">
-          <fieldset is="anonymous-box" type="inline"></fieldset>
+      <fieldset class="b-box"> <legend>Block Box</legend>
+        <fieldset class="ifc"> <legend>IFC</legend>
+          <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
   </fieldset>
 </div>
 
-<div style="text-align: center;">↓↓↓</div>
+<div class="tc">↓↓↓</div>
 
 <div>
-  <fieldset is="model-box" type="block">
-    <fieldset is="formatting-context" type="block">
-      <fieldset is="model-box" type="float" style="margin-left: -20px;">
-        <fieldset is="formatting-context" type="block">
-          <fieldset is="anonymous-box" type="block">
-            <fieldset is="formatting-context" type="inline">
-              <fieldset is="anonymous-box" type="inline"></fieldset>
+  <fieldset class="b-box"> <legend>Block Box</legend>
+    <fieldset class="bfc"> <legend>BFC</legend>
+      <fieldset class="f-box" style="margin-left: -20px;">
+        <legend>Float Box</legend>
+        <fieldset class="bfc"> <legend>BFC</legend>
+          <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+            <fieldset class="ifc"> <legend>IFC</legend>
+              <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
             </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset is="model-box" type="block">
-        <fieldset is="formatting-context" type="block">
-          <fieldset is="anonymous-box" type="block">
-            <fieldset is="formatting-context" type="inline">
-              <fieldset is="anonymous-box" type="inline"></fieldset>
+      <fieldset class="b-box"> <legend>Block Box</legend>
+        <fieldset class="bfc"> <legend>BFC</legend>
+          <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+            <fieldset class="ifc"> <legend>IFC</legend>
+              <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
             </fieldset>
           </fieldset>
         </fieldset>
@@ -387,7 +423,7 @@
 
 - Begin at the top of [Containing Block](https://www.w3.org/TR/CSS2/visuren.html#containing-block), boxes are **laid out** one after the other **vertically**.
 - The **vertical distance** between two sibling boxes is determined by **'margin'**.
-- Vertical [**Margins Collapsed**](https://www.w3.org/TR/CSS2/box.html#collapsing-margins) between adjacent boxes.
+- Vertical [**Margins Collapsed**](https://www.w3.org/TR/CSS2/box.html#collapsing-margins) between adjacent boxes in same BFC.
 - Each box's left **outer edge** touches the left edge of containing block (vice versa for right-to-left). <br> This is true even in the presence of **floats**, unless the box establishes a new <abbr title="Block Formatting Context">BFC</abbr>.
 
 #### Conditions

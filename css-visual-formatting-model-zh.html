@@ -1079,7 +1079,7 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>css-visual-formatting-model</title></head><body><article class="markdown-body"><style>
+</style><title>css-visual-formatting-model-zh</title></head><body><article class="markdown-body"><style>
   .markdown-body { position: relative; }
   label { cursor: pointer; }
   .case { background-color: #f7f7f7; padding: 20px 15px; overflow: hidden; }
@@ -1101,33 +1101,33 @@ body .markdown-body
 </style>
 
 <div style="position: absolute; top: 50px; right: 50px; font-size: small;">
-  <span style="text-decoration: underline;">English</span>&nbsp;
-  <a href="./css-visual-formatting-model-zh.html">中文</a>
+  <a href="///E://github/dondevi.github.io/css-visual-formatting-model.html">English</a>
+  &nbsp;<span style="text-decoration: underline;">中文</span>
 </div>
 
-<h1 id="css-visual-formatting-model"><a name="user-content-css-visual-formatting-model" href="#css-visual-formatting-model" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS Visual Formatting Model</h1>
+<h1 id="css"><a name="user-content-css" href="#css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS 视觉格式化模型</h1>
 <blockquote>
-<p>W3C: <a href="https://www.w3.org/TR/CSS2/visuren.html">https://www.w3.org/TR/CSS2/visuren.html</a><br />
-MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting_model">https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting_model</a></p>
+<p>W3C: <a href="http://www.ayqy.net/doc/css2-1/visuren.html">http://www.ayqy.net/doc/css2-1/visuren.html</a><br />
+MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Visual_formatting_model">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Visual_formatting_model</a></p>
 </blockquote>
-<h3 id="diagram"><a name="user-content-diagram" href="#diagram" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Diagram</h3>
+<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>图示</h3>
 <section class="case" style="overflow: auto; padding: 20px 25px; white-space: nowrap;">
   <div style="display: inline-block; margin-right: 100px;">
     <div style="width: 260px; height: 150px; border: 1px solid; border-radius: 50%; text-align: center; line-height: 90px;">
-      <strong>Block-level Box</strong>
-      <p style="margin-top: -20px;"><small style="color: #888">(Anonymous)</small> Block Box</p>
+      <strong>块级盒</strong>
+      <p style="margin-top: -20px;"><small style="color: #888">(匿名)</small> 块盒</p>
     </div>
     <div style="width: 260px; height: 200px; border: 1px dotted; border-radius: 50%; text-align: center; line-height: 200px; margin-top: -70px; position: relative;">
-      <span>Block Container Box</span>
+      <span>块容器盒</span>
       <div style="position: absolute; top: 0; right: 0; left: 0; bottom: 0; margin: -3px; clip: rect(168px auto auto auto); border: 10px dashed #f7f7f7; border-radius: 50%;"></div>
     </div>
     <div style="width: 260px; height: 200px; border: 1px solid; border-radius: 50%; text-align: center; line-height: 200px; margin-top: -70px;">
-      <p style="margin: -65px auto -135px;">Atomic Inline-level Box</p>
-      <strong>Inline-level Box</strong>
-      <p style="margin-top: -140px;"><small style="color: #888">(Anonymous)</small> Inline Box</p>
+      <p style="margin: -65px auto -135px;">原子行内级盒</p>
+      <strong>行内级盒</strong>
+      <p style="margin-top: -140px;"><small style="color: #888">(匿名)</small> 行内盒</p>
     </div>
     <div style="width: 260px; height: 150px; border: 1px dotted #aaa; border-radius: 50%; text-align: center; line-height: 220px; margin-top: -70px;">
-      <small style="display: inline-block; color: #666; line-height: normal;">Contents participate in container's <br> Inline Formatting Context</small>
+      <small style="display: inline-block; color: #666; line-height: normal;">内容参与父容器的 <br> 行内格式化上下文</small>
     </div>
   </div>
   <div style="display: inline-block; font-size: small; vertical-align: top;">
@@ -1136,36 +1136,36 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
       <strong>display { block | list-item | table }</strong></p>
     <p style="margin-top: 10px;">
       <span style="display: inline-block; width: 180px; margin-left: -150px; border-top: 1px solid #ccc; line-height: 0; vertical-align: middle;"></span>
-      Replaced Block-level Element, Table Element</p>
+      块级替换元素, 表格元素</p>
     <p style="margin-top: 58px;">
       <span style="display: inline-block; width: 150px; margin-left: -150px; border-top: 1px dashed #ccc; line-height: 0; vertical-align: middle;"></span>
-      Establish: <strong>Block Formatting Context</strong> (BFC)</p>
+      创建: <strong>块级格式化上下文</strong> (BFC)</p>
     <p style="margin-top: 10px;">
       <span style="display: inline-block; width: 150px; margin-left: -150px; border-top: 1px dashed #ccc; line-height: 0; vertical-align: middle;"></span>
-      Establish: <strong>Inline Formatting Context</strong> (IFC)</p>
+      创建: <strong>行内格式化上下文</strong> (IFC)</p>
     <p style="margin-top: 30px; position: relative;">
       <span style="display: inline-block; width: 180px; margin-left: -150px; border-top: 1px solid #ccc; line-height: 0; vertical-align: middle;"></span>
-      Non-replaced Inline Block, Non-replaced Table Cells</p>
+      非替换行内块, 非替换表格单元</p>
     <p style="margin-top: -2px;">
       <span style="display: inline-block; width: 180px; margin-left: -150px; border-top: 1px solid #ccc; line-height: 0; vertical-align: middle;">
         <span style="display: inline-block; width: 50px; margin-top: -29px; margin-left: -48px; border-top: 1px dashed #ccc; line-height: 0; vertical-align: middle; transform: rotate(30deg);"></span>
       </span>
-      Replaced Inline-level Element, Inline-table Element</p>
+      行内级替换元素, 行内表格元素</p>
     <p style="margin-top: -3px;">
       <span style="display: inline-block; width: 150px; margin-left: -150px; border-top: 1px solid #888; line-height: 0; vertical-align: middle;"></span>
       <strong>display { inline | inline-block | inline-table }</strong></p>
     <p style="margin-top: 38px;">
       <span style="display: inline-block; width: 180px; margin-left: -150px; border-top: 1px solid #ccc; line-height: 0; vertical-align: middle;"></span>
-      Non-replaced Inline Element</p>
+      非替换行内元素</p>
   </div>
 </section>
 
 <p><br></p>
 <div>
   <fieldset class="bfc"> <legend>BFC</legend>
-    <fieldset class="b-c-box"> <legend>Block Container Box</legend>
-      <fieldset class="b-box"> <legend>Block Box</legend> </fieldset>
-      <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
+    <fieldset class="b-c-box"> <legend>块容器盒</legend>
+      <fieldset class="b-box"> <legend>块盒</legend> </fieldset>
+      <fieldset class="b-l-box"> <legend>块级盒</legend> </fieldset>
     </fieldset>
   </fieldset>
 </div>
@@ -1173,13 +1173,13 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 <div class="tc">or</div>
 
 <div>
-  <fieldset class="b-c-box"> <legend>Block Container Box</legend>
+  <fieldset class="b-c-box"> <legend>块容器盒</legend>
     <fieldset class="bfc"> <legend>BFC</legend>
-      <fieldset class="b-box"> <legend>Block Box</legend> </fieldset>
-      <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
-      <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+      <fieldset class="b-box"> <legend>块盒</legend> </fieldset>
+      <fieldset class="b-l-box"> <legend>块级盒</legend> </fieldset>
+      <fieldset class="a-b-box"> <legend>匿名块盒</legend>
         <fieldset class="ifc"> <legend>IFC</legend>
-          <fieldset class="i-l-box"> <legend>Inline-level Box</legend> </fieldset>
+          <fieldset class="i-l-box"> <legend>行内级盒</legend> </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
@@ -1189,29 +1189,29 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 <div class="tc">or</div>
 
 <div>
-  <fieldset class="b-c-box"> <legend>Block Container Box</legend>
+  <fieldset class="b-c-box"> <legend>块容器盒</legend>
     <fieldset class="ifc"> <legend>IFC</legend>
       <fieldset class="f-box" style="margin-left: -20px;">
-        <legend>Float Box</legend>
+        <legend>浮动盒</legend>
         <fieldset class="bfc"> <legend>BFC</legend> </fieldset>
       </fieldset>
-      <fieldset class="l-box"> <legend>Line Box</legend>
-        <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
-        <fieldset class="at-i-l-box"> <legend>Atomic Inline-level Box</legend> </fieldset>
-        <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+      <fieldset class="l-box"> <legend>行盒</legend>
+        <fieldset class="i-box"> <legend>行内盒</legend> </fieldset>
+        <fieldset class="at-i-l-box"> <legend>原子行内级盒</legend> </fieldset>
+        <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
       </fieldset>
     </fieldset>
   </fieldset>
 </div>
 
 <p><br><hr><br></p>
-<h3 id="case-1-block-level-element-in-inline-level-element"><a name="user-content-case-1-block-level-element-in-inline-level-element" href="#case-1-block-level-element-in-inline-level-element" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Case 1: Block-level Element in Inline-level Element</h3>
+<h3 id="case-1-in"><a name="user-content-case-1-in" href="#case-1-in" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Case 1: 块级元素 in 行内级元素</h3>
 <blockquote>
-<p>[W3C] When an inline box contains an in-flow block-level box, the <strong>inline box</strong> (and its inline ancestors within the same line box) <strong>are broken around</strong> the block-level box (and any block-level siblings that are consecutive or separated only by collapsible whitespace and/or out-of-flow elements), splitting the inline box into two boxes (even if either side is empty), one on each side of the block-level box(es). The line boxes before the break and after the break are enclosed in anonymous block boxes, and the block-level box becomes a sibling of those anonymous boxes.</p>
+<p>[W3C] 当行内盒包含流内块级盒时，该行内盒（及与它处于同一行盒里的行内祖先）会打破周围的块级盒（以及任何连续的或只被可合并的空白符和/或流外元素隔开的块级兄弟），把<strong>行内盒分成两个盒</strong>（即使有一边是空的），分别位于块级盒的两边。拆分前的行盒与拆分后的行盒都被包进匿名块盒，并且该块级盒作为这些匿名盒的兄弟。</p>
 </blockquote>
 <div class="codehilite"><pre>  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Inline-level Element<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Block-level Element<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>行内级元素<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>块级元素<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     Inline Text
   <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </pre></div>
@@ -1219,8 +1219,8 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 
 <section class="case">
   <span class="ifc" style="border: 1px solid; padding: 10px;">
-    <span style="border: 1px solid; padding: 5px; background: white;">Inline-level Element</span>
-    <p style="border: 1px solid; margin: 12px 0; padding: 2px 5px; background: white;">Block-level Element</p>
+    <span style="border: 1px solid; padding: 5px; background: white;">行内级元素</span>
+    <p style="border: 1px solid; margin: 12px 0; padding: 2px 5px; background: white;">块级元素</p>
     Inline Text
   </span>
 </section>
@@ -1229,12 +1229,12 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 
 <div>
   <fieldset class="i-box" style="display: block; opacity: 0.5;">
-      <legend>Inline Box</legend>
+      <legend>行内盒</legend>
     <fieldset class="ifc"> <legend>IFC</legend>
-      <fieldset class="l-box"> <legend>Line Box</legend>
-        <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
-        <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
-        <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+      <fieldset class="l-box"> <legend>行盒</legend>
+        <fieldset class="i-box"> <legend>行内盒</legend> </fieldset>
+        <fieldset class="b-l-box"> <legend>块级盒</legend> </fieldset>
+        <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
       </fieldset>
     </fieldset>
   </fieldset>
@@ -1244,23 +1244,23 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 
 <div>
   <fieldset class="bfc"> <legend>BFC</legend>
-    <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+    <fieldset class="a-b-box"> <legend>匿名块盒</legend>
       <fieldset class="i-box" style="border-right: 0;">
-        <legend>Inline Box</legend>
+        <legend>行内盒</legend>
         <fieldset class="ifc"> <legend>IFC</legend>
-          <fieldset class="l-box"> <legend>Line Box</legend>
-            <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
+          <fieldset class="l-box"> <legend>行盒</legend>
+            <fieldset class="i-box"> <legend>行内盒</legend> </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
-    <fieldset class="b-l-box"> <legend>Block-level Box</legend> </fieldset>
-    <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+    <fieldset class="b-l-box"> <legend>块级盒</legend> </fieldset>
+    <fieldset class="a-b-box"> <legend>匿名块盒</legend>
       <fieldset class="i-box" style="border-left: 0;">
-        <legend>Inline Box</legend>
+        <legend>行内盒</legend>
         <fieldset class="ifc"> <legend>IFC</legend>
-          <fieldset class="l-box"> <legend>Line Box</legend>
-            <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+          <fieldset class="l-box"> <legend>行盒</legend>
+            <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
@@ -1271,29 +1271,29 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 <p><br><br></p>
 <h3 id="case-2-float-vs-displayinline-block"><a name="user-content-case-2-float-vs-displayinline-block" href="#case-2-float-vs-displayinline-block" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Case 2: <code>float</code> vs <code>display:inline-block</code></h3>
 <blockquote>
-<p>[W3C] However, the current and subsequent <strong>line boxes</strong> created next to the float are <strong>shortened</strong> as necessary to make room for the margin box of the float.</p>
+<p>[W3C] 然而，挨着浮动（盒）创建的当前及后续的<strong>行盒</strong>，会根据需要<strong>被缩短</strong>，以便给浮动（盒）的外边距框让出空间。</p>
 </blockquote>
 <div class="codehilite"><pre>  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: left;&quot;</span><span class="p">&gt;</span>Float Box<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: inline-block;&quot;</span><span class="p">&gt;</span>Atomic Inline-level Box<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: left;&quot;</span><span class="p">&gt;</span>浮动盒<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: inline-block;&quot;</span><span class="p">&gt;</span>原子行内级盒<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 
 
 <section class="case">
   <div class="ifc" style="border: 1px solid; padding: 10px;">
-    <span style="border: 1px solid; background: white; margin: 10px; padding: 5px; width: 200px; float: left;">Float Box</span>
+    <span style="border: 1px solid; background: white; margin: 10px; padding: 5px; width: 200px; float: left;">浮动盒</span>
     <p style="border: 1px solid; background: white; margin: 10px; padding: 5px; display: inline-block;">
-      Atomic Inline-level Box <br>
+      原子行内级盒 <br>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quas quisquam beatae illo, sit aliquid. Debitis architecto distinctio perspiciatis commodi!
     </p>
   </div>
   <div class="ifc" style="border: 1px solid; margin-top: 15px; padding: 10px;">
     <span style="border: 1px solid; background: white; margin: 10px; padding: 5px; width: 200px; float: left;">
-      Float Box <br> Lorem ipsum dolor sit amet commodi!
+      浮动盒 <br> Lorem ipsum dolor sit amet commodi!
     </span>
     <p style="border: 1px solid; background: white; margin: 10px; padding: 5px; display: inline-block;">
-      Atomic Inline-level Box
+      原子行内级盒
     </p>
   </div>
 </section>
@@ -1302,17 +1302,17 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 
 <div>
   <fieldset class="b-box" style="opacity: 0.5;">
-      <legend>Block Box</legend>
+      <legend>块盒</legend>
     <fieldset class="bfc"> <legend>BFC</legend>
       <fieldset class="a-b-box" style="float: left;">
-        <legend>Anonymous Block Box</legend>
+        <legend>匿名块盒</legend>
         <fieldset class="ifc"> <legend>IFC</legend>
-          <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
+          <fieldset class="i-box"> <legend>行内盒</legend> </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset class="b-box"> <legend>Block Box</legend>
+      <fieldset class="b-box"> <legend>块盒</legend>
         <fieldset class="ifc"> <legend>IFC</legend>
-          <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+          <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
@@ -1322,24 +1322,24 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 <div class="tc">↓↓↓</div>
 
 <div>
-  <fieldset class="b-box"> <legend>Block Box</legend>
+  <fieldset class="b-box"> <legend>块盒</legend>
     <fieldset class="ifc"> <legend>IFC</legend>
       <fieldset class="f-box" style="margin-left: -20px;">
-        <legend>Float Box</legend>
+        <legend>浮动盒</legend>
         <fieldset class="bfc"> <legend>BFC</legend>
-          <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+          <fieldset class="a-b-box"> <legend>匿名块盒</legend>
             <fieldset class="ifc"> <legend>IFC</legend>
-              <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+              <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
             </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset class="l-box"> <legend>Line Box</legend>
-        <fieldset class="at-i-l-box"> <legend>Atomic Inline-level Box</legend>
+      <fieldset class="l-box"> <legend>行盒</legend>
+        <fieldset class="at-i-l-box"> <legend>原子行内级盒</legend>
           <fieldset class="bfc"> <legend>BFC</legend>
-            <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+            <fieldset class="a-b-box"> <legend>匿名块盒</legend>
               <fieldset class="ifc"> <legend>IFC</legend>
-                <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+                <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
               </fieldset>
             </fieldset>
           </fieldset>
@@ -1352,29 +1352,29 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 <p><br><br></p>
 <h3 id="case-3-float-vs-overflowhidden"><a name="user-content-case-3-float-vs-overflowhidden" href="#case-3-float-vs-overflowhidden" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Case 3: <code>float</code> vs <code>overflow:hidden</code></h3>
 <blockquote>
-<p>[W3C] The border box of a table, a block-level replaced element, or an element in the normal flow that establishes a new block formatting context (such as an element with &lsquo;overflow&rsquo; other than &lsquo;visible&rsquo;) <strong>must not overlap</strong> the margin box of any floats <strong>in the same block formatting context</strong> as the element itself.</p>
+<p>[W3C] 表格、块级替换元素或常规流中建立了新的块格式化上下文的元素（例如一个&rsquo;overflow&rsquo;不为&rsquo;visible&rsquo;的元素）不能和与元素自身处于<strong>同一块格式化上下文中</strong>的任何浮动（盒）的外边距框重叠。</p>
 </blockquote>
 <div class="codehilite"><pre>  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: left;&quot;</span><span class="p">&gt;</span>Float Element<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;overflow: hidden;&quot;</span><span class="p">&gt;</span>Block-level Element<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: left;&quot;</span><span class="p">&gt;</span>浮动元素<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;overflow: hidden;&quot;</span><span class="p">&gt;</span>块级元素<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 
 
 <section class="case">
   <div class="ifc" style="border: 1px solid; padding: 10px;">
-    <span style="border: 1px solid; background: white; margin: 10px; padding: 5px; width: 200px; float: left;">Float ELement</span>
+    <span style="border: 1px solid; background: white; margin: 10px; padding: 5px; width: 200px; float: left;">浮动元素</span>
     <p style="border: 1px solid; background: white; margin: 10px; padding: 5px; overflow: hidden;">
-      Block-level Element <br>
+      块级元素 <br>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quas quisquam beatae illo, sit aliquid. Debitis architecto distinctio perspiciatis commodi!
     </p>
   </div>
   <div class="ifc" style="border: 1px solid; margin-top: 15px; padding: 10px;">
     <span style="border: 1px solid; background: white; margin: 10px; padding: 5px; width: 200px; float: left;">
-      Float Element <br> Lorem ipsum dolor sit amet commodi!
+      浮动元素 <br> Lorem ipsum dolor sit amet commodi!
     </span>
     <p style="border: 1px solid; background: white; margin: 10px; padding: 5px; overflow: hidden;">
-      Block-level Element
+      块级元素
     </p>
   </div>
 </section>
@@ -1383,17 +1383,17 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 
 <div>
   <fieldset class="b-box" style="opacity: 0.5;">
-      <legend>Block Box</legend>
+      <legend>块盒</legend>
     <fieldset class="bfc"> <legend>BFC</legend>
       <fieldset class="a-b-box" style="float: left;">
-        <legend>Anonymous Block Box</legend>
+        <legend>匿名块盒</legend>
         <fieldset class="ifc"> <legend>IFC</legend>
-          <fieldset class="i-box"> <legend>Inline Box</legend> </fieldset>
+          <fieldset class="i-box"> <legend>行内盒</legend> </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset class="b-box"> <legend>Block Box</legend>
+      <fieldset class="b-box"> <legend>块盒</legend>
         <fieldset class="ifc"> <legend>IFC</legend>
-          <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+          <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
         </fieldset>
       </fieldset>
     </fieldset>
@@ -1403,23 +1403,23 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 <div class="tc">↓↓↓</div>
 
 <div>
-  <fieldset class="b-box"> <legend>Block Box</legend>
+  <fieldset class="b-box"> <legend>块盒</legend>
     <fieldset class="bfc"> <legend>BFC</legend>
       <fieldset class="f-box" style="margin-left: -20px;">
-        <legend>Float Box</legend>
+        <legend>浮动盒</legend>
         <fieldset class="bfc"> <legend>BFC</legend>
-          <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+          <fieldset class="a-b-box"> <legend>匿名块盒</legend>
             <fieldset class="ifc"> <legend>IFC</legend>
-              <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+              <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
             </fieldset>
           </fieldset>
         </fieldset>
       </fieldset>
-      <fieldset class="b-box"> <legend>Block Box</legend>
+      <fieldset class="b-box"> <legend>块盒</legend>
         <fieldset class="bfc"> <legend>BFC</legend>
-          <fieldset class="a-b-box"> <legend>Anonymous Block Box</legend>
+          <fieldset class="a-b-box"> <legend>匿名块盒</legend>
             <fieldset class="ifc"> <legend>IFC</legend>
-              <fieldset class="a-i-box"> <legend>Anonymous Inline Box</legend> </fieldset>
+              <fieldset class="a-i-box"> <legend>匿名行内盒</legend> </fieldset>
             </fieldset>
           </fieldset>
         </fieldset>
@@ -1429,109 +1429,109 @@ MDN: <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Visual_formatting
 </div>
 
 <p><br><br><hr><br></p>
-<h3 id="block-level-element-mdn"><a name="user-content-block-level-element-mdn" href="#block-level-element-mdn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Block-level Element <small style="font-weight: normal;"><sup>[<a href="https://developer.mozilla.org/docs/Web/HTML/Block-level_elements">MDN</a>]</sup></small></h3>
+<h3 id="mdn"><a name="user-content-mdn" href="#mdn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>块级元素 <small style="font-weight: normal;"><sup>[<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block-level_elements">MDN</a>]</sup></small></h3>
 <ul>
-<li>Condition: <code>display</code> { <code>block</code> | <code>list-item</code> | <code>table</code> }</li>
-<li>Genarate: Block-level Box <small>(Principal + Additional)</small></li>
+<li>条件: <code>display</code> { <code>block</code> | <code>list-item</code> | <code>table</code> }</li>
+<li>生成: 块级盒 <small>(主要 + 额外)</small></li>
 </ul>
-<h3 id="inline-level-element-mdn"><a name="user-content-inline-level-element-mdn" href="#inline-level-element-mdn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Inline-level Element <small style="font-weight: normal;"><sup>[<a href="https://developer.mozilla.org/docs/Web/HTML/Inline_elements">MDN</a>]</sup></small></h3>
+<h3 id="mdn_1"><a name="user-content-mdn_1" href="#mdn_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>行内级元素 <small style="font-weight: normal;"><sup>[<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elements">MDN</a>]</sup></small></h3>
 <ul>
-<li>Condition: <code>display</code> { <code>inline</code> | <code>inline-block</code> | <code>inline-table</code> }</li>
-<li>Genarate: Inline-level Box</li>
+<li>条件: <code>display</code> { <code>inline</code> | <code>inline-block</code> | <code>inline-table</code> }</li>
+<li>生成: 行内级盒</li>
 </ul>
 <p><br><hr><br></p>
-<h3 id="block-level-box-w3c"><a name="user-content-block-level-box-w3c" href="#block-level-box-w3c" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Block-level Box <small style="font-weight: normal;"><sup>[<a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">W3C</a>]</sup></small></h3>
+<h3 id="w3c"><a name="user-content-w3c" href="#w3c" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>块级盒 <small style="font-weight: normal;"><sup>[<a href="http://www.ayqy.net/doc/css2-1/visuren.html#block-boxes">W3C</a>]</sup></small></h3>
 <blockquote>
-<p>Participating in Block Formatting Context</p>
+<p>参与块级格式化上下文</p>
 </blockquote>
-<h5 id="1-block-box"><a name="user-content-1-block-box" href="#1-block-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Block Box</h5>
+<h5 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 块盒</h5>
 <blockquote>
-<p>Block-level Box ∩ Block Container Box</p>
+<p>块级盒 ∩ 块容器盒</p>
 </blockquote>
 <ul>
-<li>Exculde: Table Box, Replaced Element</li>
+<li>除了: 表格元素, 替换元素</li>
 </ul>
-<h5 id="2-anonymous-block-box"><a name="user-content-2-anonymous-block-box" href="#2-anonymous-block-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Anonymous Block Box</h5>
-<h5 id="3-block-container-box"><a name="user-content-3-block-container-box" href="#3-block-container-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Block Container Box</h5>
+<h5 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 匿名块盒</h5>
+<h5 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 块容器盒</h5>
 <blockquote>
-<p>Contains only Block-level Box or only Inline-level Box</p>
+<p>只包含块级盒 或 只包含行内级盒</p>
 </blockquote>
 <ul>
-<li>Inculde: Non-replaced Inline Block, Non-replaced Table Cell</li>
+<li>包括: 非替换行内块, 非替换表格单元</li>
 </ul>
 <p><br></p>
-<h3 id="inline-level-box-w3c"><a name="user-content-inline-level-box-w3c" href="#inline-level-box-w3c" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Inline-level Box <small style="font-weight: normal;"><sup>[<a href="https://www.w3.org/TR/CSS2/visuren.html#inline-boxes">W3C</a>]</sup></small></h3>
-<h5 id="1-inline-box"><a name="user-content-1-inline-box" href="#1-inline-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Inline Box</h5>
+<h3 id="w3c_1"><a name="user-content-w3c_1" href="#w3c_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>行内级盒 <small style="font-weight: normal;"><sup>[<a href="http://www.ayqy.net/doc/css2-1/visuren.html#inline-boxes">W3C</a>]</sup></small></h3>
+<h5 id="1_1"><a name="user-content-1_1" href="#1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 行内盒</h5>
 <blockquote>
-<p>Contents participate in container&rsquo;s Inline Formatting Context</p>
+<p>其内容参与父容器的行内格式化上下文 (IFC)</p>
 </blockquote>
 <ul>
-<li>Condition: <code>display</code> { <code>inline</code> } &amp; Non-replaced Element</li>
+<li>条件: 非替换行内元素</li>
 </ul>
-<h5 id="2-anonymous-inline-box"><a name="user-content-2-anonymous-inline-box" href="#2-anonymous-inline-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Anonymous Inline Box</h5>
-<h5 id="3-atomic-inline-level-box"><a name="user-content-3-atomic-inline-level-box" href="#3-atomic-inline-level-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Atomic Inline-level Box</h5>
+<h5 id="2_1"><a name="user-content-2_1" href="#2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 匿名行内盒</h5>
+<h5 id="3_1"><a name="user-content-3_1" href="#3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 原子行内级盒</h5>
 <blockquote>
-<p>Contents not participate in container&rsquo;s Inline Formatting Context</p>
+<p>其内容参与父容器的行内格式化上下文 (IFC)</p>
 </blockquote>
 <ul>
-<li>Inculde: Replaced Inline-level Element, Inline-block Element, Inline-table Element</li>
+<li>包括: 行内级替换元素, 行内块元素, 行内表格元素</li>
 </ul>
 <p><br><hr><br></p>
-<h3 id="block-formatting-context-w3c-mdn"><a name="user-content-block-formatting-context-w3c-mdn" href="#block-formatting-context-w3c-mdn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Block Formatting Context <small style="font-weight: normal;"><sup>[<a href="https://www.w3.org/TR/CSS2/visuren.html#block-formatting">W3C</a>, <a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Block_formatting_context">MDN</a>]</sup></small></h3>
+<h3 id="w3c-mdn"><a name="user-content-w3c-mdn" href="#w3c-mdn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>块级格式化上下文 <small style="font-weight: normal;"><sup>[<a href="http://www.ayqy.net/doc/css2-1/visuren.html#block-formatting">W3C</a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context">MDN</a>]</sup></small></h3>
 <ul>
-<li>Contain: Block-level Box</li>
+<li>包含: 块级盒</li>
 </ul>
-<h4 id="rules"><a name="user-content-rules" href="#rules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Rules</h4>
+<h4 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>规则</h4>
 <ul>
-<li>Begin at the top of <a href="https://www.w3.org/TR/CSS2/visuren.html#containing-block">Containing Block</a>, boxes are <strong>laid out</strong> one after the other <strong>vertically</strong>.</li>
-<li>The <strong>vertical distance</strong> between two sibling boxes is determined by <strong>&lsquo;margin&rsquo;</strong>.</li>
-<li>Vertical <a href="https://www.w3.org/TR/CSS2/box.html#collapsing-margins"><strong>Margins Collapsed</strong></a> between adjacent boxes in same BFC.</li>
-<li>Each box&rsquo;s left <strong>outer edge</strong> touches the left edge of containing block (vice versa for right-to-left). <br> This is true even in the presence of <strong>floats</strong>, unless the box establishes a new <abbr title="Block Formatting Context">BFC</abbr>.</li>
+<li>从<a href="http://www.ayqy.net/doc/css2-1/visuren.html#containing-block">包含块</a>的顶部开始，盒在<strong>垂直</strong>方向一个接一个地<strong>放置</strong>。</li>
+<li>两个兄弟盒之间的<strong>垂直距离</strong>由 <strong>&lsquo;margin&rsquo;</strong> 属性决定。</li>
+<li>同一 <abbr title="块级格式化上下文">BFC</abbr> 中的相邻块级盒之间的<strong>垂直外边距</strong>会<a href="http://www.ayqy.net/doc/css2-1/box.html#collapsing-margins"><strong>合并</strong></a>。</li>
+<li>每个盒的左<strong>外边界</strong>挨着包含块的左外边界（从右向左反之亦然），<br> 即使存在<strong>浮动</strong>这也成立，除非该盒建立了一个新的 <abbr title="块级格式化上下文">BFC</abbr>。</li>
 </ul>
-<h4 id="conditions"><a name="user-content-conditions" href="#conditions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conditions</h4>
+<h4 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>条件</h4>
 <blockquote>
-<p>Establish a new <abbr title="Block Formatting Context">BFC</abbr> for contents</p>
+<p>将为其内容创建新的 <abbr title="块级格式化上下文">BFC</abbr></p>
 </blockquote>
 <ul>
-<li>Floats<ul>
+<li>浮动<ul>
 <li><code>float</code> { <code>left</code> | <code>right</code> }</li>
 </ul>
 </li>
-<li>Absolutely positioned element<ul>
+<li>绝对定位元素<ul>
 <li><code>position</code> { <code>absolute</code> | <code>fixed</code> }</li>
 </ul>
 </li>
-<li>Block Container Box that are not Block Box<ul>
+<li>不是块盒的块容器盒<ul>
 <li><code>display</code> { <code>inline-*</code>| <code>table-*</code>} - { <code>table-column</code>| <code>table-column-group</code> }</li>
 </ul>
 </li>
-<li><u>Block Box</u>  with &lsquo;overflow&rsquo; other than &lsquo;visible&rsquo;<ul>
+<li>&lsquo;overflow&rsquo; 不为 &lsquo;visible&rsquo; 的<u>块盒</u><ul>
 <li><code>overflow</code> { <code>auto</code> | <code>hidden</code> | <code>scroll</code> }</li>
 </ul>
 </li>
-<li>Root element or it&rsquo;s container <code>&lt;html&gt;</code></li>
+<li>根元素或其父容器: <code>&lt;html&gt;</code></li>
 </ul>
 <p><br></p>
-<h3 id="inline-formatting-context-w3c"><a name="user-content-inline-formatting-context-w3c" href="#inline-formatting-context-w3c" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Inline Formatting Context <small style="font-weight: normal;"><sup>[<a href="https://www.w3.org/TR/CSS2/visuren.html#inline-formatting">W3C</a>]</sup></small></h3>
+<h3 id="w3c_2"><a name="user-content-w3c_2" href="#w3c_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>行内格式化上下文 <small style="font-weight: normal;"><sup>[<a href="http://www.ayqy.net/doc/css2-1/visuren.html#inline-formatting">W3C</a>]</sup></small></h3>
 <ul>
-<li>Contain: Inline-level Box</li>
+<li>包含: 行内级盒</li>
 </ul>
-<h4 id="rules_1"><a name="user-content-rules_1" href="#rules_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Rules</h4>
+<h4 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>规则</h4>
 <ul>
-<li>Begin at the top of <a href="https://www.w3.org/TR/CSS2/visuren.html#containing-block">Containing Block</a>, boxes are <strong>laid out</strong> one after the other <strong>horizontally</strong>.</li>
-<li>The boxes may be <strong>aligned</strong> vertically in different ways: <br> their bottoms or tops may be aligned, or the baselines of text within them may be aligned.</li>
+<li>从<a href="http://www.ayqy.net/doc/css2-1/visuren.html#containing-block">包含块</a>的顶部开始，盒在<strong>水平</strong>方向一个接一个地<strong>放置</strong>。</li>
+<li>盒可能会以不同的方式<strong>垂直对齐</strong>：以它们的底部或者顶部对齐，或者以它们里面的文本的基线对齐。</li>
 </ul>
-<h4 id="line-box"><a name="user-content-line-box" href="#line-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Line Box</h4>
+<h4 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>行盒</h4>
 <blockquote>
-<p>The rectangular area that contains the boxes that form a line</p>
+<p>包含来自同一行的盒的矩形区域</p>
 </blockquote>
 <ul>
-<li>Line box&rsquo;s height ≥ tallest box&rsquo;s height.</li>
-<li>When box&rsquo;s height <small>＜</small> line box&rsquo;s height, it&rsquo;s <strong>vertical alignment</strong> is determined by the <strong>&lsquo;vertical-align&rsquo;</strong>.</li>
-<li>When boxes&rsquo;s total width <small>＜</small> line box&rsquo;s width, their <strong>horizontal distribution</strong> is determined by the <strong>&lsquo;text-align&rsquo;</strong></li>
-<li>When boxes cannot fit within a line box, they are distributed among two or more <strong>vertically-stacked</strong> line boxes.</li>
-<li>Line boxes are stacked with <strong>no vertical separation</strong> (except as specified elsewhere) and they <strong>never overlap</strong>.</li>
-<li>When an <strong>Inline Box exceeds</strong> a line box, it is <strong>split</strong> into several boxes across several line boxes. <br> It&rsquo;s margins, borders, and padding have <strong>no visual effect</strong> where the split occurs. <br> If it cannot be split (e.g. <code>white-space:nowrap</code>), then it <strong>overflows</strong> the line box.</li>
-<li>In general, line box&rsquo;s left <strong>edge</strong> touches the left edge of containing block (vice versa for right-to-left). <br> However, <strong>floating boxes</strong> may come between the containing block edge and the line box edge.</li>
+<li>行盒高度 ≥ 最高的盒的高度</li>
+<li>当盒高度 <small>＜</small> 行盒高度，它的<strong>垂直对齐方式</strong>由 <strong>&lsquo;vertical-align&rsquo;</strong> 决定。</li>
+<li>当所有盒的总宽度 <small>＜</small> 行盒宽度，它们的 <strong>水平分布</strong> 由 <strong>&lsquo;text-align&rsquo;</strong> 决定。</li>
+<li>当多个盒在水平方向上不能共存于一个行盒时，它们会被分到两个或多个<strong>垂直堆叠</strong>行盒里。</li>
+<li>行框<strong>没有垂直间隔</strong>地堆放（除非在其它地方有特别说明）并且它们<strong>不会重叠</strong>。</li>
+<li>当<strong>行内盒超出</strong>行盒宽度时，它会被<strong>分成几个盒</strong>，并且这些盒会跨多行盒分布，<br> 它的外边距，边框和内边距在发生分割的地方将<strong>没有视觉效果</strong>，<br> 如果一个行内块无法分割（例 <code>white-space:nowrap</code>），那么它会从行盒溢出。</li>
+<li>一般来说，一个行盒的左<strong>边界</strong>挨着其包含块的左边界（从右向左反之亦然），<br> 然而，<strong>浮动盒</strong>可能会跑到包含块边界与行盒边界之间。</li>
 </ul>
 <div></div></article></body></html>
